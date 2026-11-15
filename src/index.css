@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+  --font-rancho: "Rancho", cursive;
+  --font-raleway: "Raleway Variable", sans-serif;
+  --color-body: #1b1a1a;
+  --color-heading: #331a15;
+  --color-heading-2: #374151;
+}
+
+@layer base {
+  body {
+    @apply font-raleway text-body;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply text-heading font-rancho;
+  }
+}
+
+@layer utilities {
+  .form-input {
+    @apply bg-white py-3 ps-3 rounded-sm border border-transparent outline-none transition-shadow duration-150 focus:border focus:border-[#e3b577] focus:shadow-[0_0_6px_1px_rgba(217,160,102,0.75)];
+  }
+}
