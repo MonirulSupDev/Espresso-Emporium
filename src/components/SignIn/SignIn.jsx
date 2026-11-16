@@ -30,7 +30,7 @@ const SignIn = () => {
         };
 
         // Update last logged in to database
-        fetch("http://localhost:5000/user", {
+        fetch("https://coffee-store-server-ecru-eight.vercel.app/user", {
           method: "PATCH",
           headers: {
             "content-type": "application/json",

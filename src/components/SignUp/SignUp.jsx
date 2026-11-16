@@ -46,7 +46,7 @@ const SignUp = () => {
           password,
           createdAt: creatingTime,
         };
-        fetch("http://localhost:5000/user", {
+        fetch("https://coffee-store-server-ecru-eight.vercel.app/user", {
           method: "POST",
           headers: {
             "content-type": "application/json",

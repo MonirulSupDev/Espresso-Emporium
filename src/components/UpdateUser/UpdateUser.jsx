@@ -16,13 +16,16 @@ const UpdateUser = () => {
     console.log(name, email);
     const updatedUser = { name, email };
 
-    fetch(`http://localhost:5000/user/${loadedUser._id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
+    fetch(
+      `https://coffee-store-server-ecru-eight.vercel.app/user/${loadedUser._id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updatedUser),
       },
-      body: JSON.stringify(updatedUser),
-    })
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

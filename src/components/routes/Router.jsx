@@ -21,33 +21,41 @@ const router = createBrowserRouter([
       {
         index: true,
         Component: Home,
-        loader: () => fetch("http://localhost:5000/coffee"),
+        loader: () =>
+          fetch("https://coffee-store-server-ecru-eight.vercel.app/coffee"),
       },
       {
         path: "/view-coffee/:id",
         Component: ViewCoffee,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/coffee/${params.id}`),
+          fetch(
+            `https://coffee-store-server-ecru-eight.vercel.app/coffee/${params.id}`,
+          ),
       },
       { path: "/add-coffee", Component: AddCoffee },
       {
         path: "/edit-coffee/:id",
         Component: EditCoffee,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/coffee/${params.id}`),
+          fetch(
+            `https://coffee-store-server-ecru-eight.vercel.app/coffee/${params.id}`,
+          ),
       },
       { path: "/sign-up", Component: SignUp },
       { path: "/sign-in", Component: SignIn },
       {
         path: "/users",
         Component: Users,
-        loader: () => fetch("http://localhost:5000/user"),
+        loader: () =>
+          fetch("https://coffee-store-server-ecru-eight.vercel.app/user"),
       },
       {
         path: "/update-user/:id",
         Component: UpdateUser,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/user/${params.id}`),
+          fetch(
+            `https://coffee-store-server-ecru-eight.vercel.app/user/${params.id}`,
+          ),
       },
     ],
   },
