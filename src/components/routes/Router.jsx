@@ -6,6 +6,10 @@ import AddCoffee from "../AddCoffee/AddCoffee";
 import EditCoffee from "../EditCoffee/EditCoffee";
 import Loading from "../Loading/Loading";
 import ErrorPage from "../ErrorPage/ErrorPage";
+import SignUp from "../SignUp/SignUp";
+import SignIn from "../SignIn/SignIn";
+import Users from "../Users/Users";
+import UpdateUser from "../UpdateUser/UpdateUser";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +35,19 @@ const router = createBrowserRouter([
         Component: EditCoffee,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/coffee/${params.id}`),
+      },
+      { path: "/sign-up", Component: SignUp },
+      { path: "/sign-in", Component: SignIn },
+      {
+        path: "/users",
+        Component: Users,
+        loader: () => fetch("http://localhost:5000/user"),
+      },
+      {
+        path: "/update-user/:id",
+        Component: UpdateUser,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/user/${params.id}`),
       },
     ],
   },
